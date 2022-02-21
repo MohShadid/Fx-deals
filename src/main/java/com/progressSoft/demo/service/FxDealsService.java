@@ -26,15 +26,17 @@ public class FxDealsService {
 		log.info("format the amount in "+entity.getFromCurrencyCode()+"currency code");
 		String formatAmount = amountDealsFormt(entity.getDealAmount(),entity.getFromCurrencyCode());
 		entity.setAmount(formatAmount);
-		fxDealRepository.save(entity);
-		log.info("Save the record to the database");
+		 fxDealRepository.save(entity);
+		
 	}
 
 	public void checkFxDeals(BigDecimal id) throws ReqBodyException {
 		Optional<FxDeal> fxDeal = fxDealRepository.findById(id);
-		if (fxDeal.isPresent())
+		System.out.println(fxDeal);
+		if (fxDeal.isPresent()) {
 			log.info("The record already exist ");
 			throw new ReqBodyException("The record already exist ");
+			}
 	}
 	
 	public String amountDealsFormt(BigDecimal amount,String curCode) throws ReqBodyException {

@@ -38,9 +38,9 @@ public class FxDeal {
 	private BigDecimal dealAmount;
 	private String Amount;
 	@NotNull(message = "The deal Time stamp is required.")
-	@FutureOrPresent(message = "The deal Time stamp must be today or in the future.")
+	@FutureOrPresent(message = "The deal Time must be today or in the future.")
 	@JsonDeserialize(using = DateDeserializer.class)
-	private Date dealTimestamp;
+	private Date dealTime;
 
 }
 

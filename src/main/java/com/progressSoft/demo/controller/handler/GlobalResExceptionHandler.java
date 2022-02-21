@@ -46,7 +46,7 @@ public class GlobalResExceptionHandler extends ResponseEntityExceptionHandler {
       if (body == null) {
           if (HttpStatus.INTERNAL_SERVER_ERROR.equals(status))
               request.setAttribute(WebUtils.ERROR_EXCEPTION_ATTRIBUTE, ex, WebRequest.SCOPE_REQUEST);
-          log.error("Exceptions happen! --> "+ex.getMessage());
+          log.error("Exceptions happen! --> ",ex);
           errorBody.put("Response ", ex.getMessage());
           return new ResponseEntity<>(errorBody, HttpStatus.BAD_REQUEST);
          
