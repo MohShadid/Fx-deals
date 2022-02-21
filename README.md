@@ -16,7 +16,7 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 or
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
-* Check the stdout or boot_example.log file to make sure no exceptions are thrown
+* Check the stdout or logs//FxDealsDemo.log file to make sure no exceptions are thrown
 
 Once the application runs you should see something like this
 
@@ -31,7 +31,7 @@ Once the application runs you should see something like this
 
 ## About the Service
 
-The service is just a simple Bloomberg to analyze FX deals REST service. It uses an in-memory database (Mongo) to store the data. You can also do with a relational database like MySQL or PostgreSQL. If your database connection properties work, you can call some REST endpoints defined in ```com.progressSoft.demo.controller.FxDealsController``` on **port 8080**. (see below)
+The service is just a simple analyze FX deals REST service. It uses a NoSql database (Mongo) to store the data. You can also do with another database like MySQL or PostgreSQL. If your database connection properties work, you can call some REST endpoints defined in ```com.progressSoft.demo.controller.FxDealsController``` on **port 8080**. (see below)
 
 More interestingly, you can start calling some of the operational endpoints (see full list below) like ```/metrics``` and ```/health``` (these are available on **port 8080**)
 
@@ -75,7 +75,7 @@ RESPONSE: HTTP 200 (saving)
 
 ### To view Swagger 2 API docs
 
-Run the server and browse to localhost:8090/swagger-ui.html
+Run the server and browse to localhost:8080/swagger-ui
 
 # About Spring Boot
 
@@ -97,7 +97,7 @@ Spring Boot is an "opinionated" application bootstrapping framework that makes i
 
 **/trace** Displays trace information (by default the last few HTTP requests).
 
-### To view your H2 in-memory datbase
+### To view your mongoDB datbase
 
 The 'test' profile runs on H2 in-memory database. To view and query the database you can browse to http://localhost:8090/h2-console. Default username is 'sa' with a blank password. Make sure you disable this in your production profiles. For more, see https://goo.gl/U8m62X
 
