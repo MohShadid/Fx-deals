@@ -46,10 +46,10 @@ class ProgressSoftDemoApplicationTests {
 	@Test
 	void saveRecord_success() throws Exception {
 
-		Body.put("id", new BigDecimal("0"));
+		Body.put("id", BigDecimal.ZERO);
 		Body.put("fromCurrencyCode", "EUR");
 		Body.put("toCurrencyCode", "USD");
-		Body.put("dealAmount", new BigDecimal("100"));
+		Body.put("dealAmount", BigDecimal.valueOf(100));
 		Body.put("dealTime", "22-07-2022 22:54:00");
 
 		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.post("/FxDeals/saveFxDeal")
@@ -66,7 +66,7 @@ class ProgressSoftDemoApplicationTests {
 		Body.put("id", null);
 		Body.put("fromCurrencyCode", "EUR");
 		Body.put("toCurrencyCode", "USDA");
-		Body.put("dealAmount", new BigDecimal("100"));
+		Body.put("dealAmount", BigDecimal.valueOf(100));
 		Body.put("dealTime", "22-07-2022 22:54:00");
 
 		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.post("/FxDeals/saveFxDeal")
@@ -81,10 +81,10 @@ class ProgressSoftDemoApplicationTests {
 	@Test
 	void saveRecord_falidWrongDateFormat() throws Exception {
 		String date = "22-07-2022 22:10";
-		Body.put("id", null);
+		Body.put("id", BigDecimal.ZERO);
 		Body.put("fromCurrencyCode", "EUR");
 		Body.put("toCurrencyCode", "USDA");
-		Body.put("dealAmount", new BigDecimal("100"));
+		Body.put("dealAmount", BigDecimal.valueOf(100));
 		Body.put("dealTime", "22-07-2022 22:10");
 		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.post("/FxDeals/saveFxDeal")
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
@@ -101,17 +101,17 @@ class ProgressSoftDemoApplicationTests {
 	@Test
 	void saveSameRecord() throws Exception {
 
-		Body.put("id", new BigDecimal("0"));
+		Body.put("id", BigDecimal.ZERO);
 		Body.put("fromCurrencyCode", "EUR");
 		Body.put("toCurrencyCode", "USD");
-		Body.put("dealAmount", new BigDecimal("100"));
+		Body.put("dealAmount", BigDecimal.valueOf(100));
 		Body.put("dealTime", "22-07-2022 22:10:00");
 		
 		FxDeal fxDeal =FxDeal.builder()//
-				.dealAmount(new BigDecimal("100"))//
+				.dealAmount(BigDecimal.valueOf(100))//
 				.fromCurrencyCode("USD")//
 				.toCurrencyCode("EUR")//
-				.id(new BigDecimal("0")).build();
+				.id(BigDecimal.ZERO).build();
 				
 
 		 Mockito.when(fxDealRepository.findById(fxDeal.getId())).thenReturn(Optional.of(fxDeal));

@@ -105,6 +105,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>fx-deals</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
