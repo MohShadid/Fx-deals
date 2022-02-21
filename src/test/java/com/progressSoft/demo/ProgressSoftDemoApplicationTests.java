@@ -1,17 +1,13 @@
 package com.progressSoft.demo;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -56,8 +53,8 @@ class ProgressSoftDemoApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 				.content(this.mapper.writeValueAsString(Body));
 
-		mockMvc.perform(mockRequest).andExpect(status().isOk()).andExpect(jsonPath("$", notNullValue()))
-				.andExpect(jsonPath("$.Response", is("operation successful")));
+		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isOk()).andExpect(MockMvcResultMatchers.jsonPath("$", CoreMatchers.notNullValue()))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.Response", CoreMatchers.is("operation successful")));
 	}
 
 	@Test
@@ -73,8 +70,8 @@ class ProgressSoftDemoApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 				.content(this.mapper.writeValueAsString(Body));
 
-		mockMvc.perform(mockRequest).andExpect(status().isBadRequest()).andExpect(
-				result -> assertTrue(result.getResolvedException() instanceof MethodArgumentNotValidException));
+		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isBadRequest()).andExpect(
+				result -> Assert.assertTrue(result.getResolvedException() instanceof MethodArgumentNotValidException));
 
 	}
 
@@ -90,10 +87,10 @@ class ProgressSoftDemoApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 				.content(this.mapper.writeValueAsString(Body));
 
-		mockMvc.perform(mockRequest).andExpect(status().isBadRequest())
+		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isBadRequest())
 				.andExpect(
-						result -> assertTrue(result.getResolvedException().getCause() instanceof java.io.IOException))
-				.andExpect(result -> assertEquals(
+						result -> Assert.assertTrue(result.getResolvedException().getCause() instanceof java.io.IOException))
+				.andExpect(result -> Assert.assertEquals(
 						"Wrong date format dd-MM-yyyy hh:mm:ss --> Unparseable date: \"" + date + "\"",
 						result.getResolvedException().getCause().getMessage()));
 	}
@@ -120,9 +117,9 @@ class ProgressSoftDemoApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 				.content(this.mapper.writeValueAsString(Body));
 
-		mockMvc.perform(mockRequest).andExpect(status().isBadRequest())//
-		.andExpect(jsonPath("$", notNullValue()))
-		.andExpect(jsonPath("$.Response", is("The record already exist ")));
+		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isBadRequest())//
+		.andExpect(MockMvcResultMatchers.jsonPath("$", CoreMatchers.notNullValue()))
+		.andExpect(MockMvcResultMatchers.jsonPath("$.Response", CoreMatchers.is("The record already exist ")));
 	}
 
 }

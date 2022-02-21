@@ -12,7 +12,7 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 * You can build the project and run the tests by running ```mvn clean package```
 * Once successfully built, you can run the service by one of these two methods:
 ```
-        java -jar -Dspring.profiles.active=test target\progressSoftDemo-0.0.1-SNAPSHOT.war
+        java -jar -Dspring.profiles.active=test target\fx-deals.war
 or
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
