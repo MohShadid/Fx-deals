@@ -3,6 +3,7 @@
 This is a sample Java / Maven / Spring Boot (version 2.5.4) application that can be used for saving a fx deals using MongoDB.
 
 ## How to Run 
+### There is two way to Run :
 #### 1.
 This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. 
 
