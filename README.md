@@ -97,10 +97,5 @@ Spring Boot is an "opinionated" application bootstrapping framework that makes i
 
 **/trace** Displays trace information (by default the last few HTTP requests).
 
-### To view your mongoDB datbase
-
-The 'test' profile runs on H2 in-memory database. To view and query the database you can browse to http://localhost:8090/h2-console. Default username is 'sa' with a blank password. Make sure you disable this in your production profiles. For more, see https://goo.gl/U8m62X
-
-
 
 # Questions and Comments: muh.shadid@gmail.com

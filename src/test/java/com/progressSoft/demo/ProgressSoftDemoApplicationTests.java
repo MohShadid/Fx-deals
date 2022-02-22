@@ -1,13 +1,16 @@
 package com.progressSoft.demo;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +74,7 @@ class ProgressSoftDemoApplicationTests {
 				.content(this.mapper.writeValueAsString(Body));
 
 		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isBadRequest()).andExpect(
-				result -> Assert.assertTrue(result.getResolvedException() instanceof MethodArgumentNotValidException));
+				result -> assertTrue(result.getResolvedException() instanceof MethodArgumentNotValidException));
 
 	}
 
@@ -89,8 +92,8 @@ class ProgressSoftDemoApplicationTests {
 
 		mockMvc.perform(mockRequest).andExpect(MockMvcResultMatchers.status().isBadRequest())
 				.andExpect(
-						result -> Assert.assertTrue(result.getResolvedException().getCause() instanceof java.io.IOException))
-				.andExpect(result -> Assert.assertEquals(
+						result -> assertTrue(result.getResolvedException().getCause() instanceof java.io.IOException))
+				.andExpect(result -> assertEquals(
 						"Wrong date format dd-MM-yyyy hh:mm:ss --> Unparseable date: \"" + date + "\"",
 						result.getResolvedException().getCause().getMessage()));
 	}
