@@ -109,8 +109,8 @@ class FxdealsDemoApplicationTests {
 		
 		FxDeal fxDeal =FxDeal.builder()//
 				.dealAmount(BigDecimal.valueOf(100))//
-				.fromCurrencyCode("USD")//
-				.toCurrencyCode("EUR")//
+				.fromCurrencyCode("EUR")//
+				.toCurrencyCode("USD")//
 				.id(BigDecimal.ZERO).build();
 				
 
