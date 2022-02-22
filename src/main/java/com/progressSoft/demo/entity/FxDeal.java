@@ -48,7 +48,7 @@ public class FxDeal {
 	@NotNull(message = "The deal Time stamp is required.")
 	@FutureOrPresent(message = "The deal Time must be today or in the future.")
 	@JsonDeserialize(using = DateDeserializer.class)
-	@ApiModelProperty(notes = "Deal timestamp",required = true)
+	@ApiModelProperty(notes = "Deal timestamp (dd-MM-yyyy hh:mm:ss) ",required = true)
 	private Date dealTime;
 	
 	@ApiModelProperty(hidden = true)
