@@ -46,7 +46,7 @@ mongo.db=mydb
 ```
 ## About the Service
 
-The service is just a simple analyze FX deals REST service. It uses a NoSql database (Mongo) to store the data. You can also do with another database like MySQL or PostgreSQL. If your database connection properties work, you can call some REST endpoints defined in ```com.progressSoft.demo.controller.FxDealsController``` on **port 8080**. (see below)
+The service is just a simple analyze FX deals REST service. It uses a NoSql database (Mongo) to store the data. You can also do with another database like MySQL or PostgreSQL. If your database connection properties work, you can call some REST endpoints defined in ```com.fxdeals.demo.controller.FxDealsController``` on **port 8080**. (see below)
 
 More interestingly, you can start calling some of the operational endpoints (see full list below) like ```/metrics``` and ```/health``` (these are available on **port 8080**)
 
