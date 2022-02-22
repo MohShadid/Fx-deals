@@ -30,10 +30,19 @@ Once the application runs you should see something like this
 2022-02-21 10:17:22 INFO  ProgressSoftDemoApplication:61 - Started ProgressSoftDemoApplication in 4.007 seconds (JVM running for 4.818)
 ```
 #### 2.
-Clone the Repo & run the following commands.
+Clone the Repo & run the following command.
 
 ```bash
 docker-compose up
+```
+Make sure to change the  application.properties as below  before run the command.
+
+##### application.properties
+
+```c
+mongo.uri=mongo_db
+mongo.port=27017
+mongo.db=mydb
 ```
 ## About the Service
 
