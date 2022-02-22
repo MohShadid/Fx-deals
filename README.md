@@ -1,4 +1,4 @@
-# Spring Boot CRUD - Mongo DB + Docker
+# Spring Boot CRUD - Mongo DB + Docker (Restful Service)
 
 This is a sample Java / Maven / Spring Boot (version 2.5.4) application that can be used for saving a fx deals using MongoDB.
 
