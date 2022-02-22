@@ -1,4 +1,4 @@
-package com.progressSoft.demo;
+package com.fxdeals.demo;
 
 
 import static org.junit.Assert.assertEquals;
@@ -24,13 +24,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.progressSoft.demo.controller.FxDealsController;
-import com.progressSoft.demo.entity.FxDeal;
-import com.progressSoft.demo.model.mongo.FxDealRepository;
+import com.fxdeals.demo.controller.FxDealsController;
+import com.fxdeals.demo.entity.FxDeal;
+import com.fxdeals.demo.model.mongo.FxDealRepository;
 
 
 @WebMvcTest(FxDealsController.class)
-class ProgressSoftDemoApplicationTests {
+class FxdealsDemoApplicationTests {
 
 	@Autowired
 	MockMvc mockMvc;

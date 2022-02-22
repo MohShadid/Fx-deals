@@ -1,4 +1,4 @@
-package com.progressSoft.demo.Exception;
+package com.fxdeals.demo.Exception;
 
 public class ReqBodyException extends Exception {
 	

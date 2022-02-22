@@ -1,4 +1,4 @@
-package com.progressSoft.demo;
+package com.fxdeals.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,14 +10,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { //
-        "com.progressSoft.demo", //
+        "com.fxdeals.demo", //
 })
 @EnableSwagger2
 @EnableAspectJAutoProxy(proxyTargetClass=true)
-public class ProgressSoftDemoApplication {
+public class FxdealsDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProgressSoftDemoApplication.class, args);
+		SpringApplication.run(FxdealsDemoApplication.class, args);
 		
 		
 	}

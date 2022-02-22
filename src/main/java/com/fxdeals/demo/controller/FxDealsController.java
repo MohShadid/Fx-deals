@@ -1,4 +1,4 @@
-package com.progressSoft.demo.controller;
+package com.fxdeals.demo.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.progressSoft.demo.Exception.ReqBodyException;
-import com.progressSoft.demo.entity.FxDeal;
-import com.progressSoft.demo.service.FxDealsService;
+import com.fxdeals.demo.Exception.ReqBodyException;
+import com.fxdeals.demo.entity.FxDeal;
+import com.fxdeals.demo.service.FxDealsService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

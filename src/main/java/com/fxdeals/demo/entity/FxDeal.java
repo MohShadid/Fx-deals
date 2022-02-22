@@ -1,4 +1,4 @@
-package com.progressSoft.demo.entity;
+package com.fxdeals.demo.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.progressSoft.demo.controller.handler.DateDeserializer;
+import com.fxdeals.demo.controller.handler.DateDeserializer;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

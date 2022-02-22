@@ -1,4 +1,4 @@
-package com.progressSoft.demo.controller.handler;
+package com.fxdeals.demo.controller.handler;
 
 import java.io.IOException;
 import java.text.ParseException;

@@ -1,4 +1,4 @@
-package com.progressSoft.demo.service;
+package com.fxdeals.demo.service;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -8,9 +8,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.progressSoft.demo.Exception.ReqBodyException;
-import com.progressSoft.demo.entity.FxDeal;
-import com.progressSoft.demo.model.mongo.FxDealRepository;
+
+import com.fxdeals.demo.Exception.ReqBodyException;
+import com.fxdeals.demo.entity.FxDeal;
+import com.fxdeals.demo.model.mongo.FxDealRepository;
 
 @Service
 public class FxDealsService {

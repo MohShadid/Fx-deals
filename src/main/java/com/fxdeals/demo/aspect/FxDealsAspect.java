@@ -1,4 +1,4 @@
-package com.progressSoft.demo.aspect;
+package com.fxdeals.demo.aspect;
 
 import java.util.Currency;
 
@@ -9,8 +9,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
-import com.progressSoft.demo.Exception.ReqBodyException;
-import com.progressSoft.demo.entity.FxDeal;
+import com.fxdeals.demo.Exception.ReqBodyException;
+import com.fxdeals.demo.entity.FxDeal;
 
 @Aspect
 @Component
@@ -18,7 +18,7 @@ public class FxDealsAspect {
 
 	final static Logger log = LogManager.getLogger(FxDealsAspect.class);
 
-	@Before(value = "execution(* com.progressSoft.demo.service.FxDealsService.*(..)) and args(entity)")
+	@Before(value = "execution(* com.fxdeals.demo.service.FxDealsService.*(..)) and args(entity)")
 	public void beforeAdvice(JoinPoint joinPoint, FxDeal entity) throws ReqBodyException {
 		log.info("before saving the fx deal in the mongoDB ");
 		checkCurCode(entity.getFromCurrencyCode());

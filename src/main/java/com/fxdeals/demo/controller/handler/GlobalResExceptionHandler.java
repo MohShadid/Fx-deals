@@ -1,4 +1,4 @@
-package com.progressSoft.demo.controller.handler;
+package com.fxdeals.demo.controller.handler;
 
 import java.util.HashMap;
 import java.util.List;

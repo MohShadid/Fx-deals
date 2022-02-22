@@ -1,4 +1,4 @@
-package com.progressSoft.demo.config;
+package com.fxdeals.demo.config;
 
 
 import java.util.Arrays;
@@ -19,7 +19,7 @@ import com.mongodb.client.MongoClients;
 
 
 @Configuration
-@EnableMongoRepositories("com.progressSoft.demo.model.mongo")
+@EnableMongoRepositories("com.fxdeals.demo.model.mongo")
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
 	private MongoProperties appSetup;
@@ -48,7 +48,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
 	@Override
 	protected String getMappingBasePackage() {
-		return "com.progressSoft.demo";
+		return "com.fxdeals.demo";
 	}
 
 	
