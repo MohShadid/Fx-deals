@@ -3,7 +3,7 @@
 This is a sample Java / Maven / Spring Boot (version 2.5.4) application that can be used for saving a fx deals using MongoDB.
 
 ## How to Run 
-
+###1.
 This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary. 
 
 * Clone this repository 
@@ -28,7 +28,12 @@ Once the application runs you should see something like this
 2022-02-21 10:17:21 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
 2022-02-21 10:17:22 INFO  ProgressSoftDemoApplication:61 - Started ProgressSoftDemoApplication in 4.007 seconds (JVM running for 4.818)
 ```
+###2.
+Clone the Repo & run the following commands.
 
+```bash
+docker-compose up
+```
 ## About the Service
 
 The service is just a simple analyze FX deals REST service. It uses a NoSql database (Mongo) to store the data. You can also do with another database like MySQL or PostgreSQL. If your database connection properties work, you can call some REST endpoints defined in ```com.progressSoft.demo.controller.FxDealsController``` on **port 8080**. (see below)
