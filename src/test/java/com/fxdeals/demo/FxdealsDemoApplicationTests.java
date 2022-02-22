@@ -85,7 +85,7 @@ class FxdealsDemoApplicationTests {
 		Body.put("fromCurrencyCode", "EUR");
 		Body.put("toCurrencyCode", "USDA");
 		Body.put("dealAmount", BigDecimal.valueOf(100));
-		Body.put("dealTime", "22-07-2022 22:10");
+		Body.put("dealTime", date);
 		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.post("/FxDeals/saveFxDeal")
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 				.content(this.mapper.writeValueAsString(Body));
