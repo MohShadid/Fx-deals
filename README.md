@@ -16,7 +16,7 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 or
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
-* Check the stdout or logs//FxDealsDemo.log file to make sure no exceptions are thrown
+* Check the stdout or logs/FxDealsDemo.log file to make sure no exceptions are thrown
 
 Once the application runs you should see something like this
 
@@ -67,8 +67,8 @@ Content-Type: application/json
   "dealAmount": 1234.23434,
   "dealTimestamp": "22-07-2022 22:54:00",
   "fromCurrencyCode": "USD",
-  "id":null,
-  "toCurrencyCode": "USD"
+  "id":0,
+  "toCurrencyCode": "EUR"
 }
 RESPONSE: HTTP 200 (saving)
 ```

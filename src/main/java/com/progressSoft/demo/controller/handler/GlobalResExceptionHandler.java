@@ -17,8 +17,11 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import org.springframework.web.util.WebUtils;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 
 @ControllerAdvice
+@ApiIgnore
 public class GlobalResExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	final static Logger log = LogManager.getLogger(GlobalResExceptionHandler.class);
